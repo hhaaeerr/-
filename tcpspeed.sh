@@ -35,20 +35,8 @@ sed -i '/net.ipv4.udp_wmem_min/d' /etc/sysctl.conf
 sed -i '/net.core.default_qdisc/d' /etc/sysctl.conf
 sed -i '/net.ipv4.tcp_congestion_control/d' /etc/sysctl.conf
 cat >> /etc/sysctl.conf << EOF
-net.ipv4.tcp_no_metrics_save=1
-net.ipv4.tcp_ecn=0
-net.ipv4.tcp_frto=0
-net.ipv4.tcp_mtu_probing=0
-net.ipv4.tcp_rfc1337=1
-net.ipv4.tcp_sack=1
-net.ipv4.tcp_fack=1
-net.ipv4.tcp_window_scaling=1
-net.ipv4.tcp_adv_win_scale=2
-net.ipv4.tcp_moderate_rcvbuf=1
-net.ipv4.tcp_rmem=4096 65536 37331520
-net.ipv4.tcp_wmem=4096 65536 37331520
-net.ipv4.udp_rmem_min=8192
-net.ipv4.udp_wmem_min=8192
+net.ipv4.tcp_rmem=1024 65536 20331520
+net.ipv4.tcp_wmem=1024 65536 20331520
 net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 EOF
