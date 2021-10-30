@@ -36,7 +36,7 @@ sed -i '/net.core.default_qdisc/d' /etc/sysctl.conf
 sed -i '/net.ipv4.tcp_congestion_control/d' /etc/sysctl.conf
 cat >> /etc/sysctl.conf << EOF
 net.ipv4.tcp_rmem=1024 65536 20331520
-net.ipv4.tcp_wmem=1024 65536 20331520
+net.ipv4.tcp_wmem=1024 16384  20331520
 net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 EOF
